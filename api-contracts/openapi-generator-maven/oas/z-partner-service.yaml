@@ -1,0 +1,36 @@
+openapi: 3.1.0
+info:
+  title: Contract Service
+  version: v1
+
+paths:
+  "/v1/applications/{applicationCode}":
+    get:
+      tags:
+        - application
+      operationId: getApplicationDetails
+      description: Get Application Details by Application Code
+      parameters:
+        - name: applicationCode
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApplicationDetailsResponseDTO"
+components:
+  schemas:
+    ApplicationDetailsResponseDTO:
+      type: object
+      properties:
+        applicationCode:
+          type: string
+          nullable: false
+        applicationStatus:
+          type: string
+          nullable: false

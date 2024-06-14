@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.example.oasgenrator</groupId>
+        <artifactId>openapi-generator-maven</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>clients</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>x-partner</module>
+        <module>y-partner</module>
+        <module>z-partner</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <specFileName />
+        <packageSuffixName />
+        <inputSpec>${project.basedir}/../../oas/${specFileName}</inputSpec>
+        <packageName>com.example.mavengenerator.${packageSuffixName}</packageName>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openapitools</groupId>
+            <artifactId>jackson-databind-nullable</artifactId>
+            <version>0.2.6</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.openapitools</groupId>
+                    <artifactId>openapi-generator-maven-plugin</artifactId>
+                    <version>7.6.0</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                            <phase>process-resources</phase>
+                            <configuration>
+                                <generatorName>spring</generatorName>
+                                <library>spring-http-interface</library>
+                                <generateSupportingFiles>false</generateSupportingFiles>
+                                <inputSpec>${inputSpec}</inputSpec>
+                                <modelPackage>${packageName}.model</modelPackage>
+                                <apiPackage>${packageName}.api</apiPackage>
+                                <invokerPackage>${packageName}.invoker</invokerPackage>
+                                <configOptions>
+                                    <useResponseEntity>false</useResponseEntity>
+                                </configOptions>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

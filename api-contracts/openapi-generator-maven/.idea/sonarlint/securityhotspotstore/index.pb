@@ -1,0 +1,23 @@
+
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+?
+clients/pom.xml,e/8/e897e41994586ab73af075bc072526099d5eec43
+I
+clients/x-partner/pom.xml,1/7/170f295ad13364627a43230c9beda152d4bc0887
+I
+clients/y-partner/pom.xml,9/e/9e27dfe4aac628a1835f4fe1dd846a4495ef21d1
+I
+clients/z-partner/pom.xml,0/9/09d64ded8cf43a5f157318ee953c4e7759b2af49
+I
+oas/contract-service.yaml,4/4/44ca37bb3535252484f4a9a57a376d22b6f59c27
+J
+oas/x-partner-service.yaml,6/b/6b281496f0d694952dfd8648b9840bdb4db07f12
+J
+oas/y-partner-service.yaml,4/e/4e15495bbefab9589dce4aba5c0a6a6e115854ad
+J
+oas/z-partner-service.yaml,2/9/294de1faf3c6a5014ebdbef8beea08d4ceac7a9b
+?
+servers/pom.xml,f/c/fcb90cb1b11d523cd35a581870bd14d150382a84
+P
+ servers/contract-service/pom.xml,4/c/4ca1238544ae2a4f4c06388c35fdbc40afb7fd34

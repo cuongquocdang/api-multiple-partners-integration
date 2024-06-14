@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.example.oasgenrator</groupId>
+        <artifactId>clients</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>z-partner</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <specFileName>z-partner-service.yaml</specFileName>
+        <packageSuffixName>zpartner</packageSuffixName>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <!-- Inherit the version and base configuration from the parent POM -->
+                <configuration>
+                    <inputSpec>${inputSpec}</inputSpec>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

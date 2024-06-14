@@ -1,0 +1,46 @@
+openapi: 3.1.0
+info:
+  title: Contract Service
+  version: v1
+
+paths:
+  "/v1/{partnerCode}/contracts/{contractId}":
+    get:
+      tags:
+        - contracts
+      operationId: getContractDetails
+      description: Get Contract Details
+      parameters:
+        - name: partnerCode
+          in: path
+          required: true
+          schema:
+            type: string
+            example: X-Partner
+        - name: contractId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: 123
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContractDetailsResponseDTO"
+components:
+  schemas:
+    ContractDetailsResponseDTO:
+      type: object
+      properties:
+        contractId:
+          type: string
+          nullable: false
+        contractStatus:
+          type: string
+          nullable: false
+        partnerCode:
+          type: string
+          nullable: false
