@@ -1,6 +1,6 @@
 package com.example.contractservice.presentation.apis;
 
-import com.example.contractservice.api.V1Contract;
+import com.example.contractservice.api.V1Api;
 import com.example.contractservice.application.requesthandlers.GetContractDetailsRequestHandler;
 import com.example.contractservice.domain.enums.PartnerCode;
 import com.example.contractservice.model.ContractDetailsResponseDTO;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class ContractAPIV1 implements V1Contract {
+public class ContractAPIV1 implements V1Api {
 
     private final GetContractDetailsRequestHandler getContractDetailsRequestHandler;
 
