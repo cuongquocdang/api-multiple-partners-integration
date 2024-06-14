@@ -1,0 +1,17 @@
+server:
+  shutdown: graceful
+
+spring:
+  application:
+    name: backend-service
+  main:
+    banner-mode: off
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+  level:
+    org.zalando.logbook: trace
+
+z-partner:
+  base-url: http://localhost
